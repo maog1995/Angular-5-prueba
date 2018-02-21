@@ -13,4 +13,16 @@ export class AppComponent {
         {'name': 'Nombre2', 'phoneNumber': 999999998},
         {'name': 'Nombre3', 'phoneNumber': 999999997}
     ];
+
+    addPerson(): void {
+    }
+
+    deletePerson(): void {
+    }
+
+    editPerson(): void {
+    }
+
+    updatePerson(): void {
+    }
 }
