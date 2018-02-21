@@ -14,6 +14,8 @@ export class AppComponent {
         {'name': 'Nombre3', 'phoneNumber': 999999997}
     ];
 
+    model: any = {};
+
     addPerson(): void {
     }
 
