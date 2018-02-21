@@ -17,6 +17,7 @@ export class AppComponent {
     model: any = {};
 
     addPerson(): void {
+        this.people.push(this.model);
     }
 
     deletePerson(): void {
