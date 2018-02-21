@@ -15,17 +15,31 @@ export class AppComponent {
     ];
 
     model: any = {};
+    model2: any = {};
 
     addPerson(): void {
         this.people.push(this.model);
     }
 
     deletePerson(): void {
+
     }
 
-    editPerson(): void {
+    myValue;
+
+    editPerson(i): void {
+        this.model2.name = this.people[i].name;
+        this.model2.phoneNumber = this.people[i].phoneNumber;
+        this.myValue = i;
     }
 
     updatePerson(): void {
+        let i = this.myValue;
+        for (let j = 0; j < this.people.length; j++) {
+            if (i == j) {
+                this.people[i] = this.model2;
+                this.model2 = {};
+            }
+        }
     }
 }

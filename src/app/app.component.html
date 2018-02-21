@@ -47,4 +47,56 @@
             </form>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Lectura de datos: </h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Nº de telefono</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let person of people; let i = index">
+                    <td>{{person.name}}</td>
+                    <td>{{person.phoneNumber}}</td>
+                    <td>
+                        <a (click)="editPerson(i)" class="btn btn-warning">Editar</a>
+                        <a (click)="deletePerson(i)" class="btn btn-danger">Borrar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-4">
+            <h2>Actualizar persona: </h2>
+            <form>
+                <div class="form-group row">
+                    <label for="name" class="control-label col-sm-2">
+                        Nombre
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model2.name"
+                               placeholder="Escribe un nombre">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="phoneNumber" class="control-label col-sm-2">
+                        Nº de teléfono
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="phoneNumber" name="phoneNumber"
+                               [(ngModel)]="model2.phoneNumber"
+                               placeholder="99999999">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <button type="submit" class="btn btn-success" (click)="updatePerson()">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
