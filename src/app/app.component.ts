@@ -21,8 +21,11 @@ export class AppComponent {
         this.people.push(this.model);
     }
 
-    deletePerson(): void {
-
+    deletePerson(i): void {
+        var answer = confirm('¿Seguro que quieres eliminar?');
+        if (answer) {
+            this.people.splice(i, 1);
+        }
     }
 
     myValue;
